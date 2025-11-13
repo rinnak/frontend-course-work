@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+h1,
+h2,
+h3 {
+  font-family: "Syncopate", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+span.title {
+  font-size: 14px;
+  font-family: "Syncopate", sans-serif;
+  font-weight: 600;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.container h1 {
+  font-size: 24px;
+}
+
+.container p {
+  font-size: 16px;
+}

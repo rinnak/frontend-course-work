@@ -1,0 +1,125 @@
+.hero {
+  background-image: linear-gradient(
+      135deg,
+      rgba(14, 14, 14, 0.5),
+      rgba(14, 14, 14, 0.6)
+    ),
+    url("../img/item2/herobg.jpg");
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-info {
+  margin-bottom: 50px;
+}
+.hero p {
+  font-weight: 500;
+}
+.carousel-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  gap: 30px;
+}
+
+.carousel-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.carousel-viewport {
+  position: relative;
+  width: 1160px;
+  height: 470px;
+  padding-top: 30px;
+
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+.carousel-frame {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.carousel-frame-center {
+  transform: scale(1.15);
+  flex-shrink: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.03);
+  position: relative;
+}
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  top: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-frame-title {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.3em;
+  box-sizing: border-box;
+}
+.carousel-frame-center .carousel-frame-title {
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  font-size: 1.5em;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.carousel-prev {
+  left: -80px;
+}
+.carousel-next {
+  right: -80px;
+}
+.carousel-prev:hover,
+.carousel-next:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+footer {
+  margin-top: 50px;
+}
