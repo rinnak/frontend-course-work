@@ -94,3 +94,72 @@
 .add-to-cart-btn:hover {
   background-color: transparent;
 }
+
+.catalog-section {
+  display: flex;
+  align-items: center;
+  margin: auto auto;
+  gap: 20px;
+  width: 80%;
+}
+.catalog-section .container {
+  width: 100%;
+}
+.sidebar {
+  width: 210px;
+
+  background-color: transparent;
+  border: 2px solid var(--main-color);
+  border-radius: 20px;
+  padding: 20px 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: sticky;
+  top: 100px;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.checkboxes input[type="checkbox"] {
+  accent-color: var(--main-color);
+  cursor: pointer;
+}
+
+.sidebar select,
+.filter-btn {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: white;
+  background-color: transparent !important;
+  border: 2px solid var(--main-color);
+}
+
+.filter-btn {
+  background-color: var(--main-color) !important;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+option {
+  background-color: var(--main-color);
+  outline: none;
+  border: none;
+}

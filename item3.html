@@ -39,7 +39,32 @@
           <img alt="" />
         </div>
       </section>
-      <section>
+      <section class="catalog-section">
+        <aside class="sidebar">
+          <h3>Фильтр</h3>
+          <div class="filter-group">
+            <label>Категории:</label>
+            <div class="checkboxes">
+              <label><input type="checkbox" value="Кольца" /> Кольца</label>
+              <label><input type="checkbox" value="Серьги" /> Серьги</label>
+              <label><input type="checkbox" value="Браслеты" /> Браслеты</label>
+              <label><input type="checkbox" value="Колье" /> Колье</label>
+              <label><input type="checkbox" value="Подвески" /> Подвески</label>
+              <label
+                ><input type="checkbox" value="Комплекты" /> Комплекты</label
+              >
+            </div>
+          </div>
+          <div class="filter-group">
+            <label for="sort">Сортировка по цене:</label>
+            <select id="sort">
+              <option value="default">Без сортировки</option>
+              <option value="asc">По возрастанию</option>
+              <option value="desc">По убыванию</option>
+            </select>
+          </div>
+          <button id="applyFilters" class="filter-btn">Применить</button>
+        </aside>
         <div class="container">
           <h1>Коллекция украшений</h1>
           <div class="jewelry-grid" id="jewelry-items"></div>
@@ -153,7 +178,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="js/jewelry-filter.js"></script>
     <script src="js/jewelry-data.js"></script>
     <script src="js/jewelry-logic.js"></script>
   </body>
