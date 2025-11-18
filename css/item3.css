@@ -44,7 +44,7 @@
   height: 400px;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
 .jewelry-image {
@@ -180,4 +180,32 @@ option {
 #toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(-10px);
+}
+
+.catalog-counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+
+.catalog-counter button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--glass-background);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+
+.catalog-counter span {
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
 }

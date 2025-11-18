@@ -43,14 +43,15 @@ function hideAll() {
   loadMoreBtn.textContent = "Показать еще";
   loadMoreBtn.onclick = loadMoreJewelry;
   loadMoreJewelry();
+  updateCatalogButtons();
 }
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("add-to-cart-btn")) {
-    const id = Number(e.target.dataset.id);
-    addToCart(id);
-  }
-});
+// document.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("add-to-cart-btn")) {
+//     const id = Number(e.target.dataset.id);
+//     addToCart(id);
+//   }
+// });
 function checkIfAllLoaded() {
   const loadMoreBtn = document.querySelector(".load-more-btn");
   const showItems = currentPage * itemsPerPage;
@@ -62,4 +63,5 @@ function checkIfAllLoaded() {
 
 document.addEventListener("DOMContentLoaded", function () {
   loadMoreJewelry();
+  updateCatalogButtons();
 });
