@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Корзина</title>
+  </head>
+  <body>
+    <header>
+      <h2><a href="index.html">Destiny</a></h2>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Философия</a></li>
+          <li><a href="item1.html">Коллекции</a></li>
+          <li><a href="item2.html">Галерея</a></li>
+          <li><a href="item3.html">Контакты</a></li>
+          <li class="btn-cart">
+            <a href="cart.html" class="cart">
+              <img
+                class="cart-image"
+                src="img/cart.svg"
+                width="40px"
+                height="40px"
+                alt="cart"
+              />
+            </a>
+          </li>
+          <li class="btn"><a href="form.html">Регистрация</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="cart-container">
+            <h1>Корзина</h1>
+            <div class="cart-list" id="cart-list"></div>
+            <div class="cart-summary">
+              <div>
+                <h2>Итого:</h2>
+                <p class="total-price" id="total-price">0 Р</p>
+              </div>
+              <button class="checkout-btn">Оформить заказ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="footer-item">
+          <h3>О нас</h3>
+          <p>
+            <span class="title">Destiny</span> — ювелирный дом, создающий
+            эксклюзивные украшения с 2010 года. Мы сочетаем вековые традиции
+            мастерства с современным дизайном, предлагая клиентам изделия
+            высочайшего качества и безупречного стиля.
+          </p>
+          <div class="social">
+            <a class="icon tg" href="#">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a class="icon vk" href="#">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a class="icon git" href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-item">
+          <h3>Услуги</h3>
+          <ul class="footer-nav">
+            <li><a href="#">Консультация</a></li>
+            <li><a href="#">Индивидульный заказ</a></li>
+            <li><a href="#">Подбор размера</a></li>
+            <li><a href="#">Граввировка</a></li>
+            <li><a href="#">Чистка</a></li>
+            <li><a href="#">Гарантия</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3>Коллекции</h3>
+          <ul class="footer-nav">
+            <li><a href="#">Кольца</a></li>
+            <li><a href="#">Серьги</a></li>
+            <li><a href="#">Подвески</a></li>
+            <li><a href="#">Браслеты</a></li>
+            <li><a href="#">Колье</a></li>
+            <li><a href="#">Обручальные</a></li>
+            <li><a href="#">Подарки</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3>Контакты</h3>
+          <ul class="footer-nav">
+            <li><p>14 Tverskaya Street Moscow, 117513, Russia</p></li>
+            <li><a href="tel:+79001111111">+7-900-111-11-11</a></li>
+            <li>
+              <a href="mailto:mail@destiny@gmail.com">destiny@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-item footer-bottom">
+          <p>Copyright 2025 Destiny Jewelry. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

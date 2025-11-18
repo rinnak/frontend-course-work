@@ -36,16 +36,21 @@ function loadMoreJewelry() {
 function hideAll() {
   const container = document.getElementById("jewelry-items");
   const loadMoreBtn = document.querySelector(".load-more-btn");
-
+  if (!cart || !loadMoreBtn) return;
   container.innerHTML = "";
-  currentPage = 1;
-  loadMoreJewelry();
   currentPage = 1;
 
   loadMoreBtn.textContent = "Показать еще";
   loadMoreBtn.onclick = loadMoreJewelry;
+  loadMoreJewelry();
 }
 
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-cart-btn")) {
+    const id = Number(e.target.dataset.id);
+    addToCart(id);
+  }
+});
 function checkIfAllLoaded() {
   const loadMoreBtn = document.querySelector(".load-more-btn");
   const showItems = currentPage * itemsPerPage;
@@ -53,11 +58,6 @@ function checkIfAllLoaded() {
   if (showItems >= allJewelry.length) {
     loadMoreBtn.style.display = "none";
   }
-}
-
-function addToCart(productId) {
-  const product = allJewelry.find((item) => item.id === productId);
-  alert(`Добавлено в корзину: ${product.title}`);
 }
 
 document.addEventListener("DOMContentLoaded", function () {

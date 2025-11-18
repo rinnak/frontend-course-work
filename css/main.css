@@ -29,6 +29,9 @@
 header h2 {
   font-weight: 400;
 }
+html {
+  scrollbar-gutter: stable;
+}
 body {
   font-family: Montserrat, sans-serif;
   color: white;
@@ -123,7 +126,8 @@ header img {
   transition: all 0.2s ease;
   position: relative;
 }
-.nav-list a::after {
+
+.nav-list li:not(:nth-child(5)):not(:nth-child(6)) a::after {
   content: "";
   position: absolute;
   background-color: var(--main-color);
@@ -133,7 +137,8 @@ header img {
   left: 0;
   transition: all 0.2s ease;
 }
-.nav-list a:hover::after {
+
+.nav-list li:not(:nth-child(5)):not(:nth-child(6)) a:hover::after {
   width: 100%;
 }
 .nav-list li.btn a {
@@ -155,8 +160,7 @@ header img {
   background: var(--glass-background);
   font-size: 1em;
   font-family: Montserrat, sans-serif;
-  max-width: 200px;
-  width: 200px;
+  width: object-fit;
   color: white;
   padding: 10px 50px;
   border-radius: 50px;
@@ -167,6 +171,32 @@ header img {
   border: var(--glass-border);
   cursor: pointer;
   position: relative;
+  transition: all 0.2s ease;
+}
+.btn-hero:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+.btn-hero:active {
+  transform: translateY(1px);
+}
+
+.cart {
+  position: relative;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--glass-background);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-image {
+  object-fit: contain;
+  width: 20px;
+  height: 20px;
+  color: white;
 }
 
 .full-width-img {
@@ -257,72 +287,33 @@ section:first-child {
   padding-top: 0;
 }
 
-footer {
-  margin-top: 80px;
-}
-
-.cards {
-  display: grid;
-  padding: 120px 50px;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.card-item {
-  background-color: var(--main-color);
-  border-radius: 10px;
-  position: relative;
-  background: var(--glass-background);
-  border: var(--glass-border);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
-  overflow: hidden;
-  transition: all 0.3s ease;
+.main-card-container {
+  width: 85%;
+  margin: 0 auto;
+  height: 450px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 10px;
 }
-
-section.cards-section {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  position: relative;
+.main-card-container img {
+  width: 12%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.main-card-container img:hover {
+  width: 25%;
+  z-index: 3;
 }
 .cards-section h1 {
-  position: absolute;
-  top: 45px; /* Отступ от верха секции */
-  text-align: center;
-  font-size: 2em;
-  font-family: "Syncopate", sans-serif;
-  z-index: 10;
-  margin: 0;
-  width: 100%;
+  margin: 0 auto 30px auto;
+  width: fit-content;
 }
-
-.card-item .card-content {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  padding: 0 15px;
-  flex-wrap: wrap;
-}
-
-.card-item .card-content p,
-.card-item .card-content h3 {
-  display: flex;
-  text-align: center;
-}
-
-.card-item .card-content img {
-  margin-bottom: 20px;
-}
-
 footer {
+  margin-top: 80px;
   background-color: #181818;
 }
 .footer {
@@ -364,4 +355,73 @@ footer {
 
 .footer-item h3 {
   margin-bottom: 15px;
+}
+
+.social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: var(--glass-background);
+  border-radius: 50%;
+  box-shadow: 4px 8px 5px #18181826;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon i {
+  font-size: 26px;
+  color: #181818;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.icon:after {
+  content: "";
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  transform: translateY(70px);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.icon.vk:after {
+  background: linear-gradient(25deg, #b929b0, #7f29b9);
+}
+
+.icon.tg:after {
+  background: linear-gradient(25deg, #1aa3c1, #42c351);
+}
+
+.icon.git:after {
+  background: linear-gradient(25deg, #c11a1a, #ca6f20);
+}
+
+.icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 0px 15px #18181826;
+}
+
+.icon:hover i {
+  color: white;
+}
+
+.icon:hover::after {
+  transform: translateY(0);
+}
+
+.footer-item:nth-child(1) {
+  display: flex;
+  flex-direction: column;
 }

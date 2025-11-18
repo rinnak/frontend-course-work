@@ -13,18 +13,33 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
     <header>
-      <h2>Destiny</h2>
+      <h2><a href="index.html">Destiny</a></h2>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="index.html">Философия</a></li>
+          <li><a href="index.html">Главная</a></li>
           <li><a href="item1.html">Коллекции</a></li>
-          <li><a href="item2.html">Галерея</a></li>
-          <li><a href="item3.html">Контакты</a></li>
-          <li class="btn"><a href="#">Регистрация</a></li>
+          <li><a href="item2.html">Вдохновение</a></li>
+          <li><a href="item3.html">Магазин</a></li>
+          <li class="btn-cart">
+            <a href="cart.html" class="cart">
+              <img
+                class="cart-image"
+                src="img/cart.svg"
+                width="40px"
+                height="40px"
+                alt="cart"
+              />
+            </a>
+          </li>
+          <li class="btn"><a href="form.html">Регистрация</a></li>
         </ul>
       </nav>
     </header>
@@ -32,15 +47,17 @@
       <section class="hero">
         <div class="hero-info">
           <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa.
+            Искусство, воплощенное в драгоценностях. Узнайте, как наши украшения
+            меняют жизни и создают моменты
           </p>
-          <button class="btn-hero">В магазин</button>
+          <button class="btn-hero">
+            <a href="item3.html">Черпать вдохновение</a>
+          </button>
           <img alt="" />
         </div>
       </section>
       <section class="carousel-section container">
-        <h2 class="carousel-title">Lorem ipsum dollore</h2>
+        <h2 class="carousel-title">Истории в украшениях</h2>
         <div class="carousel-viewport">
           <div class="carousel">
             <div class="carousel-frame">
@@ -49,7 +66,7 @@
                 alt="Коллекция 1"
                 class="carousel-image"
               />
-              <h3 class="carousel-frame-title">carousel title</h3>
+              <h3 class="carousel-frame-title">Свадебная элегантность</h3>
             </div>
             <div class="carousel-frame">
               <img
@@ -57,7 +74,7 @@
                 alt="Коллекция 1"
                 class="carousel-image"
               />
-              <h3 class="carousel-frame-title">carousel title</h3>
+              <h3 class="carousel-frame-title">Вечерний выход</h3>
             </div>
             <div class="carousel-frame">
               <img
@@ -65,7 +82,7 @@
                 alt="Коллекция 1"
                 class="carousel-image"
               />
-              <h3 class="carousel-frame-title">carousel title</h3>
+              <h3 class="carousel-frame-title">Деловой стиль</h3>
             </div>
             <div class="carousel-frame">
               <img
@@ -73,7 +90,7 @@
                 alt="Коллекция 1"
                 class="carousel-image"
               />
-              <h3 class="carousel-frame-title">carousel title</h3>
+              <h3 class="carousel-frame-title">Повседневный шик</h3>
             </div>
             <div class="carousel-frame">
               <img
@@ -81,12 +98,40 @@
                 alt="Коллекция 1"
                 class="carousel-image"
               />
-              <h3 class="carousel-frame-title">carousel title</h3>
+              <h3 class="carousel-frame-title">Особый случай</h3>
             </div>
           </div>
         </div>
         <button class="carousel-prev">‹</button>
         <button class="carousel-next">›</button>
+      </section>
+      <section class="frame">
+        <div class="container frame-container">
+          <div class="frame-text">
+            <h2>
+              Lookbook<br />
+              "glow"
+            </h2>
+            <p>Подборка образов для вдохновения</p>
+          </div>
+          <div class="frame-item-container">
+            <div class="frame-item">
+              <img src="img/item3/1.jpg" alt="" />
+              <p>Романтический образ</p>
+              <a href="item3.html">В коллекцию</a>
+            </div>
+            <div class="frame-item">
+              <img src="img/item3/4.jpg" alt="" />
+              <p>Современный стиль</p>
+              <a href="item3.html">В коллекцию</a>
+            </div>
+            <div class="frame-item">
+              <img src="img/item3/2.jpg" alt="" />
+              <p>Классическая элегантность</p>
+              <a href="item3.html">В коллекцию</a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -99,77 +144,51 @@
             мастерства с современным дизайном, предлагая клиентам изделия
             высочайшего качества и безупречного стиля.
           </p>
+          <div class="social">
+            <a class="icon tg" href="#">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a class="icon vk" href="#">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a class="icon git" href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
         </div>
 
         <div class="footer-item">
           <h3>Услуги</h3>
           <ul class="footer-nav">
-            <li><a href="#">Консультация</a></li>
-            <li><a href="#">Индивидульный заказ</a></li>
-            <li><a href="#">Подбор размера</a></li>
-            <li><a href="#">Граввировка</a></li>
-            <li><a href="#">Чистка</a></li>
-            <li><a href="#">Гарантия</a></li>
+            <li><a href="form.html">Консультация</a></li>
+            <li><a href="form.html">Индивидульный заказ</a></li>
+            <li><a href="form.html">Подбор размера</a></li>
+            <li><a href="form.html">Граввировка</a></li>
+            <li><a href="form.html">Чистка</a></li>
+            <li><a href="form.html">Гарантия</a></li>
           </ul>
         </div>
         <div class="footer-item">
           <h3>Коллекции</h3>
           <ul class="footer-nav">
-            <li><a href="#">Кольца</a></li>
-            <li><a href="#">Серьги</a></li>
-            <li><a href="#">Подвески</a></li>
-            <li><a href="#">Браслеты</a></li>
-            <li><a href="#">Колье</a></li>
-            <li><a href="#">Обручальные</a></li>
-            <li><a href="#">Подарки</a></li>
+            <li><a href="item3.html">Кольца</a></li>
+            <li><a href="item3.html">Серьги</a></li>
+            <li><a href="item3.html">Подвески</a></li>
+            <li><a href="item3.html">Браслеты</a></li>
+            <li><a href="item3.html">Колье</a></li>
+            <li><a href="item3.html">Обручальные</a></li>
+            <li><a href="item3.html">Подарки</a></li>
           </ul>
         </div>
         <div class="footer-item">
           <h3>Контакты</h3>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e3e3e3"
-            >
-              <path
-                d="M480-107q-14 0-28-5t-25-15q-65-60-115-117t-83.5-110.5q-33.5-53.5-51-103T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 45-17.5 94.5t-51 103Q698-301 648-244T533-127q-11 10-25 15t-28 5Zm0-373q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Z"
-              />
-            </svg>
-            <p>14 Tverskaya Street Moscow, 117513, Russia</p>
-          </div>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e3e3e3"
-            >
-              <path
-                d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z"
-              />
-            </svg>
-            <div>
-              <p>+7 987 123-45-67<br />+7 987 123-45-67</p>
-            </div>
-          </div>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e3e3e3"
-            >
-              <path
-                d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-287q5 0 10.5-1.5T501-453l283-177q8-5 12-12.5t4-16.5q0-20-17-30t-35 1L480-520 212-688q-18-11-35-.5T160-659q0 10 4 17.5t12 11.5l283 177q5 3 10.5 4.5T480-447Z"
-              />
-            </svg>
-            <p>example@mail.ru</p>
-          </div>
+          <ul class="footer-nav">
+            <li><p>14 Tverskaya Street Moscow, 117513, Russia</p></li>
+            <li><a href="tel:+79001111111">+7-900-111-11-11</a></li>
+            <li>
+              <a href="mailto:mail@destiny@gmail.com">destiny@gmail.com</a>
+            </li>
+          </ul>
         </div>
         <div class="footer-item footer-bottom">
           <p>Copyright 2025 Destiny Jewelry. All Rights Reserved</p>
