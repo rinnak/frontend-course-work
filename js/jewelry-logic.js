@@ -31,6 +31,7 @@ function loadMoreJewelry() {
     loadMoreBtn.onclick = hideAll;
   }
   currentPage++;
+  updateCatalogButtons();
 }
 
 function hideAll() {
@@ -44,15 +45,6 @@ function hideAll() {
   loadMoreBtn.onclick = loadMoreJewelry;
   loadMoreJewelry();
   updateCatalogButtons();
-}
-
-function checkIfAllLoaded() {
-  const loadMoreBtn = document.querySelector(".load-more-btn");
-  const showItems = currentPage * itemsPerPage;
-
-  if (showItems >= allJewelry.length) {
-    loadMoreBtn.style.display = "none";
-  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {

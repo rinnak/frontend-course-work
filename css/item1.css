@@ -81,6 +81,7 @@ body {
 }
 
 .item1-grid-item img {
+  flex-shrink: 0;
   width: 100%;
   height: 340px;
   object-fit: cover;
@@ -89,6 +90,9 @@ body {
   pointer-events: none;
 }
 
+.item1-grid-item a {
+  margin-top: auto;
+}
 .a-card {
   padding: 6px 14px;
   border-radius: 40px;
@@ -103,6 +107,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
+  overflow: hidden;
 }
 .exclusive-container {
   display: grid;

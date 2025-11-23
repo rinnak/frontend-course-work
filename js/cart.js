@@ -1,28 +1,27 @@
-// cart.js
 const cartList = document.getElementById("cart-list");
 const totalPrice = document.getElementById("total-price");
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || []; //преобразует сохраненные в браузере объекты корзины в JS объект если они есть
 
 function findCartItem(id) {
   return cart.find((item) => item.id === id);
 }
 
 function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart)); //преобразуем массив корзины в JSON и сохраняем в память браузера
 }
 
 function addToCart(id) {
-  const product = jewelryDataset.find((item) => item.id === id);
+  const product = jewelryDataset.find((item) => item.id === id); //ищем в бд товар с таким айдишником
   if (!product) return;
 
-  let existing = findCartItem(id);
+  let existing = findCartItem(id); //проверяем есть ли этот товар в корзине
 
   if (existing) {
     existing.quantity++;
   } else {
     cart.push({
-      ...product,
+      ...product, //копируем все свойства товара
       quantity: 1,
     });
   }
@@ -30,7 +29,6 @@ function addToCart(id) {
   saveCart();
   renderCart();
   updateCatalogButtons();
-  showToast(`${product.title} добавлен в корзину`);
 }
 
 function decreaseQuantity(id) {
@@ -61,7 +59,7 @@ function increaseQuantity(id) {
 function renderCart() {
   if (!cartList) return;
 
-  cartList.innerHTML = "";
+  cartList.innerHTML = ""; //удаляем старые товары из корзины
 
   if (cart.length === 0) {
     cartList.innerHTML = "<p>В корзине нет товаров</p>";
@@ -109,12 +107,13 @@ function removeItem(id) {
 }
 
 function updateTotal() {
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); //сворачиваем массив в одно значение
   totalPrice.textContent = `${total.toLocaleString()} Р`;
 }
 
 function updateCatalogButtons() {
   document.querySelectorAll(".jewelry-item-wrapper").forEach((wrapper) => {
+    //ищем все карточки товаров
     const addBtn = wrapper.querySelector(".add-to-cart-btn");
     const counter = wrapper.querySelector(".catalog-counter");
 
@@ -133,12 +132,11 @@ function updateCatalogButtons() {
       // товара нет в корзине — нужно показать кнопку "В корзину"
       // если сейчас в карточке есть counter — заменяем его на кнопку
       if (counter) {
-        counter.outerHTML = `<button class="add-to-cart-btn" data-id="${id}">В корзину</button>`;
+        counter.outerHTML = `<button class="add-to-cart-btn" data-id="${id}">В корзину</button>`; //заменяем счетчик на кнопку
         // навешиваем обработчик на вновь созданную кнопку
         const newBtn = wrapper.querySelector(".add-to-cart-btn");
         if (newBtn) newBtn.onclick = () => addToCart(id);
       } else if (addBtn) {
-        // кнопка уже есть — просто убедимся, что обработчик назначен
         addBtn.onclick = () => addToCart(id);
       }
     } else {

@@ -2,12 +2,13 @@ const sortSelect = document.getElementById("sort");
 const applyBtn = document.getElementById("applyFilters");
 const checkboxes = document.querySelectorAll(
   ".checkboxes input[type='checkbox']"
-);
+); //получаем массив всех отмеченных и неотмеченных чекбоксов
 
 applyBtn.addEventListener("click", () => {
   const selectedCategories = Array.from(checkboxes)
     .filter((checkbox) => checkbox.checked)
-    .map((checkbox) => checkbox.value); //берем значение из атрибута value
+    .map((checkbox) => checkbox.value); //меняем элемент массива на атрибут value
+  //получаем массив строк с названиями выбранных категорий
 
   const sort = sortSelect.value;
 
