@@ -5,15 +5,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.querySelector(".carousel-next");
   const viewport = document.querySelector(".carousel-viewport");
 
-  const FRAME_WIDTH = 350;
-  const GAP = 30;
-  const VIEWPORT_WIDTH = 1160;
-  const TRANSITION_MS = 500;
+  function getVisibleCount() {
+    return window.innerWidth < 835 ? 2 : 3;
+  }
+
+  function getCarouselSettings() {
+    const frame = document.querySelector(".carousel-frame");
+    const computedStyle = window.getComputedStyle(frame);
+    const frameWidth = parseInt(computedStyle.width);
+    const gap = 30;
+    const viewportWidth = viewport.offsetWidth;
+
+    return { FRAME_WIDTH: frameWidth, GAP: gap, VIEWPORT_WIDTH: viewportWidth };
+  }
 
   if (!origFrames.length) return;
   const N = origFrames.length;
 
-  // === КЛОНИРУЕМ ФРЕЙМЫ ===
   const prependFragment = document.createDocumentFragment();
   const appendFragment = document.createDocumentFragment();
 
@@ -27,95 +35,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const allFrames = Array.from(document.querySelectorAll(".carousel-frame"));
   let currentIndex = N + 2;
-  if (N < 3) currentIndex = N;
-
   let isAnimating = false;
 
   function calculatePosition(index) {
-    const pos = index * (FRAME_WIDTH + GAP);
-    const viewportCenter = VIEWPORT_WIDTH / 2;
-    const frameCenterOffset = FRAME_WIDTH / 2;
-    return pos - viewportCenter + frameCenterOffset;
-  }
+    const settings = getCarouselSettings();
+    const V = getVisibleCount();
 
-  // 🔧 Функция временного отключения анимации карточек
-  function disableCardTransitions() {
-    allFrames.forEach((f) => (f.style.transition = "none"));
-  }
+    const offset = index * (settings.FRAME_WIDTH + settings.GAP);
 
-  function enableCardTransitions() {
-    allFrames.forEach((f) => (f.style.transition = ""));
+    // центрируем НЕ одну карточку, а группу из 2 или 3
+    const visibleWidth = V * settings.FRAME_WIDTH + (V - 1) * settings.GAP;
+
+    const viewportCenter = settings.VIEWPORT_WIDTH / 2;
+    const centerOffset = visibleWidth / 2;
+
+    return offset - viewportCenter + centerOffset;
   }
 
   function applyTransform(index, instant = false) {
-    if (instant) {
-      carousel.style.transition = "none";
-      disableCardTransitions(); // 🔹 Отключаем transitions у карточек
-    } else {
-      carousel.style.transition = `transform ${TRANSITION_MS}ms ease`;
-      enableCardTransitions();
-    }
+    carousel.style.transition = instant ? "none" : "transform 500ms ease";
 
     const target = calculatePosition(index);
     carousel.style.transform = `translateX(-${target}px)`;
-
-    allFrames.forEach((f) => f.classList.remove("carousel-frame-center"));
-    if (instant) {
-      // Отложенно применяем класс без анимации
-      requestAnimationFrame(() => {
-        allFrames[index].classList.add("carousel-frame-center");
-      });
-    } else {
-      allFrames[index].classList.add("carousel-frame-center");
-    }
   }
 
   function goTo(index) {
     if (isAnimating) return;
     isAnimating = true;
 
-    applyTransform(index, false);
+    applyTransform(index);
 
     setTimeout(() => {
-      // === Проверка выхода за границы ===
       if (index >= 2 * N) {
-        index = index - N;
+        index -= N;
         applyTransform(index, true);
       } else if (index < N) {
-        index = index + N;
+        index += N;
         applyTransform(index, true);
       }
 
       currentIndex = index;
-      setTimeout(() => {
-        enableCardTransitions(); // 🔹 Возвращаем плавность
-        isAnimating = false;
-      }, 50);
-    }, TRANSITION_MS + 10);
+      isAnimating = false;
+    }, 520);
   }
 
-  function nextSlide() {
-    goTo(currentIndex + 1);
-  }
+  prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+  nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
 
-  function prevSlide() {
-    goTo(currentIndex - 1);
-  }
+  let autoSlideInterval = setInterval(() => goTo(currentIndex + 1), 3000);
 
-  prevBtn.addEventListener("click", prevSlide);
-  nextBtn.addEventListener("click", nextSlide);
-
-  // === Автопрокрутка ===
-  let autoSlideInterval = setInterval(nextSlide, 3000);
   viewport.addEventListener("mouseenter", () =>
     clearInterval(autoSlideInterval)
   );
+
   viewport.addEventListener("mouseleave", () => {
-    autoSlideInterval = setInterval(nextSlide, 3000);
+    autoSlideInterval = setInterval(() => goTo(currentIndex + 1), 3000);
   });
 
-  // === Инициализация ===
   applyTransform(currentIndex, true);
 
-  window.addEventListener("resize", () => applyTransform(currentIndex, true));
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      applyTransform(currentIndex, true);
+    }, 100);
+  });
 });

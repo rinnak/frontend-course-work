@@ -1,0 +1,138 @@
+@media (max-width: 1420px) {
+  .carousel-frame {
+    width: 300px;
+    height: 380px;
+  }
+  .carousel-viewport {
+    width: 1000px; /* 3 карточки × 340px + 2 × 30px gap = 1080px (округляем до 1060) */
+  }
+
+  /* Центрируем карусель в контейнере */
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1230px) {
+  .carousel-frame {
+    width: 270px;
+    height: 360px;
+  }
+  .carousel-viewport {
+    width: 890px; /* 3 карточки × 340px + 2 × 30px gap = 1080px (округляем до 1060) */
+    height: 430px;
+  }
+  .carousel-frame-center {
+    font-size: 0.85em;
+  }
+  /* Центрируем карусель в контейнере */
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 1120px) {
+  .carousel-frame {
+    width: 260px;
+    height: 350px;
+  }
+  .carousel-viewport {
+    width: 890px; /* 3 карточки × 340px + 2 × 30px gap = 1080px (округляем до 1060) */
+    height: 420px;
+  }
+  .carousel-frame-title {
+    font-size: 1.1em;
+  }
+  .carousel-frame-center {
+    font-size: 0.8em;
+  }
+  .carousel-frame-title 
+  /* Центрируем карусель в контейнере */
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 1070px) {
+  .carousel-frame {
+    width: 240px;
+    height: 340px;
+  }
+  .carousel-viewport {
+    width: 880px;
+  }
+}
+@media (max-width: 1000px) {
+  .carousel-frame {
+    width: 220px;
+    height: 310px;
+  }
+  .carousel-viewport {
+    width: 730px;
+    height: 380px;
+  }
+  .carousel-frame-center {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 930px) {
+  .carousel-frame {
+    width: 200px;
+    height: 280px;
+  }
+  .carousel-viewport {
+    height: 350px;
+  }
+  .carousel-frame-title {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 860px) {
+  .carousel-frame-center {
+    transform: scale(1);
+  }
+  .carousel-frame {
+    transform: scale(1);
+    width: 190px;
+  }
+
+  .carousel-frame-title {
+    font-size: 0.8em !important; /* Делаем такой же как у обычных */
+    margin-top: 15px; /* Убираем лишние отступы */
+  }
+  .carousel-viewport {
+    width: 640px;
+  }
+  .carousel-frame-center .carousel-frame-title {
+    font-size: 0.8em !important;
+  }
+}
+@media (max-width: 835px) {
+  .carousel-viewport {
+    width: calc(2 * 190px + 30px); /* 2 фрейма + gap */
+    margin: 0 auto; /* центрируем */
+    overflow: hidden;
+  }
+
+  /* фиксируем ширину карточек */
+  .carousel-frame {
+    width: 190px;
+  }
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 915px) {
+  .frame-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    height: auto;
+  }
+}

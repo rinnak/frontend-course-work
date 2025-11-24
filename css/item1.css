@@ -48,6 +48,9 @@ body {
 .shop-buttons ul {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 25px;
+  justify-content: center;
   column-gap: 15px;
 }
 .shop-buttons a {
