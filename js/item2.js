@@ -6,19 +6,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const viewport = document.querySelector(".carousel-viewport");
 
   function getVisibleCount() {
-    return window.innerWidth < 835 ? 2 : 3;
+    if (window.innerWidth < 650) return 1;
+    if (window.innerWidth < 835) return 2;
+    return 3;
   }
 
   function getCarouselSettings() {
     const frame = document.querySelector(".carousel-frame");
     const computedStyle = window.getComputedStyle(frame);
-    const frameWidth = parseInt(computedStyle.width);
-    const gap = 30;
+
+    const frameWidth = parseFloat(computedStyle.width);
+
+    // ТЕКУЩИЙ gap ИЗ CSS
+    const carouselComputed = window.getComputedStyle(carousel);
+    const gap = parseFloat(
+      carouselComputed.columnGap || carouselComputed.gap || 0
+    );
+
     const viewportWidth = viewport.offsetWidth;
 
-    return { FRAME_WIDTH: frameWidth, GAP: gap, VIEWPORT_WIDTH: viewportWidth };
+    return {
+      FRAME_WIDTH: frameWidth,
+      GAP: gap,
+      VIEWPORT_WIDTH: viewportWidth,
+    };
   }
-
   if (!origFrames.length) return;
   const N = origFrames.length;
 

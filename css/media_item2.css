@@ -4,10 +4,8 @@
     height: 380px;
   }
   .carousel-viewport {
-    width: 1000px; /* 3 карточки × 340px + 2 × 30px gap = 1080px (округляем до 1060) */
+    width: 930px;
   }
-
-  /* Центрируем карусель в контейнере */
   .carousel-buttons {
     display: flex;
     justify-content: center;
@@ -20,13 +18,13 @@
     height: 360px;
   }
   .carousel-viewport {
-    width: 890px; /* 3 карточки × 340px + 2 × 30px gap = 1080px (округляем до 1060) */
+    width: 830px;
     height: 430px;
   }
   .carousel-frame-center {
     font-size: 0.85em;
   }
-  /* Центрируем карусель в контейнере */
+
   .carousel-buttons {
     display: flex;
     justify-content: center;
@@ -38,7 +36,7 @@
     height: 350px;
   }
   .carousel-viewport {
-    width: 890px; /* 3 карточки × 340px + 2 × 30px gap = 1080px (округляем до 1060) */
+    width: 790px;
     height: 420px;
   }
   .carousel-frame-title {
@@ -60,7 +58,7 @@
     height: 340px;
   }
   .carousel-viewport {
-    width: 880px;
+    width: 740px;
   }
 }
 @media (max-width: 1000px) {
@@ -69,7 +67,7 @@
     height: 310px;
   }
   .carousel-viewport {
-    width: 730px;
+    width: 680px;
     height: 380px;
   }
   .carousel-frame-center {
@@ -82,6 +80,7 @@
     height: 280px;
   }
   .carousel-viewport {
+    width: 610px;
     height: 350px;
   }
   .carousel-frame-title {
@@ -89,50 +88,142 @@
   }
 }
 
-@media (max-width: 860px) {
-  .carousel-frame-center {
-    transform: scale(1);
-  }
-  .carousel-frame {
-    transform: scale(1);
-    width: 190px;
-  }
-
-  .carousel-frame-title {
-    font-size: 0.8em !important; /* Делаем такой же как у обычных */
-    margin-top: 15px; /* Убираем лишние отступы */
-  }
-  .carousel-viewport {
-    width: 640px;
-  }
-  .carousel-frame-center .carousel-frame-title {
-    font-size: 0.8em !important;
-  }
-}
 @media (max-width: 835px) {
+  .carousel-frame {
+    width: 270px;
+    height: 320px;
+  }
   .carousel-viewport {
-    width: calc(2 * 190px + 30px); /* 2 фрейма + gap */
-    margin: 0 auto; /* центрируем */
+    width: 540px;
+    margin: 0 50px;
     overflow: hidden;
   }
-
-  /* фиксируем ширину карточек */
-  .carousel-frame {
-    width: 190px;
+  .carousel-frame-title {
+    font-size: 1em;
   }
 }
 
+@media (max-width: 770px) {
+  .carousel-frame {
+    width: 250px;
+    height: 300px;
+  }
+}
+@media (max-width: 720px) {
+  .carousel-frame {
+    width: 220px;
+    height: 270px;
+  }
+  .carousel-viewport {
+    width: 460px;
+  }
+}
+@media (max-width: 650px) {
+  .carousel-section {
+    gap: 0;
+  }
+  .carousel-frame {
+    width: 300px;
+    height: 350px;
+  }
+  .carousel-viewport {
+    width: 310px;
+    height: 370px;
+  }
+  .carousel-prev {
+    left: 20px;
+  }
+  .carousel-next {
+    right: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .carousel-frame {
+    width: 280px;
+    height: 330px;
+  }
+  .carousel-viewport {
+    width: 280px;
+  }
+}
+@media (max-width: 515px) {
+  .carousel-frame {
+    width: 250px;
+    height: 300px;
+  }
+  .carousel-viewport {
+    width: 250px;
+  }
+  .carousel-prev,
+  .carousel-next {
+    width: 40px;
+    height: 40px;
+  }
+  .carousel-prev {
+    left: 0px;
+  }
+  .carousel-next {
+    right: 0px;
+  }
+}
+@media (max-width: 420px) {
+  .carousel-prev {
+    left: -20px;
+  }
+  .carousel-next {
+    right: -20px;
+  }
+  .carousel-viewport {
+    margin: 0;
+  }
+}
+@media (max-width: 350px) {
+  .carousel-frame {
+    width: 230px;
+    height: 290px;
+  }
+}
 .carousel-buttons {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-
 @media (max-width: 915px) {
   .frame-container {
     display: flex;
     flex-direction: column;
+    gap: 30px;
     padding: 20px 30px;
     height: auto;
+  }
+
+  .frame-item {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .frame-item p {
+    flex: 1;
+  }
+  .frame-text h2 {
+    text-align: center;
+  }
+  .frame-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .frame-item-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (max-width: 375px) {
+  .frame-text h2 {
+    font-size: 20px;
+  }
+  .frame-text p {
+    font-size: 14px;
   }
 }
