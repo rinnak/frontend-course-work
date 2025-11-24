@@ -1,0 +1,66 @@
+@media (max-width: 1130px) {
+  .jewelry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 920px) {
+  .jewelry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .jewelry-image {
+    height: 230px;
+  }
+  .jewelry-title {
+    font-size: 1em;
+  }
+  .jewelry-info p {
+    font-size: 14px;
+  }
+  .jewelry-item {
+    height: 370px;
+  }
+}
+@media (max-width: 670px) {
+  .jewelry-image {
+    height: 200px;
+  }
+  .jewelry-item {
+    height: 350px;
+  }
+}
+
+@media (max-width: 615px) {
+  .catalog-section {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+  .sidebar h3 {
+    text-align: center;
+  }
+  .checkboxes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    row-gap: 5px;
+  }
+  .filter-btn {
+    width: fit-content;
+    align-self: center;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 380px) {
+  .jewelry-image {
+    height: 180px;
+  }
+  .jewelry-item {
+    height: 345px;
+  }
+}
