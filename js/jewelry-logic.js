@@ -1,6 +1,21 @@
 let currentPage = 1;
-const itemsPerPage = 4;
+let itemsPerPage = getItemsPerPage();
 let allJewelry = [...jewelryDataset];
+
+function getItemsPerPage() {
+  if (window.innerWidth <= 920) return 4;
+  if (window.innerWidth <= 1130) return 3;
+  return 4;
+}
+
+window.addEventListener("resize", function () {
+  const newItemsPerPage = getItemsPerPage();
+  if (newItemsPerPage !== itemsPerPage) {
+    itemsPerPage = newItemsPerPage;
+    // Перезагружаем контент с новым количеством элементов
+    hideAll();
+  }
+});
 
 function loadMoreJewelry() {
   const loadMoreBtn = document.querySelector(".load-more-btn");
