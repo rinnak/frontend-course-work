@@ -142,3 +142,19 @@
     font-size: 0.8em;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+  .cards-section {
+    width: 95%;
+  }
+}
+
+@media (max-width: 340px) {
+  .footer-bottom span {
+    display: block;
+    text-align: center;
+  }
+}

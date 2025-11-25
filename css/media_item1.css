@@ -17,8 +17,11 @@
   }
   .exclusive-item {
     height: 480px;
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
+  }
+  .item1-grid-item img {
+    margin-bottom: 0;
   }
 }
 @media (min-width: 760px) and (max-width: 860px) {
@@ -52,6 +55,9 @@
   }
   .container p {
     font-size: 14px;
+  }
+  .exclusive-details {
+    font-size: 10px !important;
   }
   .exclusive-item {
     height: 350px;

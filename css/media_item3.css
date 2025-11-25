@@ -64,3 +64,13 @@
     height: 345px;
   }
 }
+
+@media (max-width: 480px) {
+  .catalog-section {
+    width: 95%;
+  }
+  .sidebar {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
