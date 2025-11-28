@@ -51,6 +51,8 @@
     row-gap: 5px;
   }
   .filter-btn {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     align-self: center;
     margin-top: 5px;

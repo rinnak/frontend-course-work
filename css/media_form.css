@@ -1,0 +1,12 @@
+@media (max-width: 650px) {
+  .box .square {
+    display: none;
+  }
+}
+
+@media (max-width: 410px) {
+  .container {
+    width: 97%;
+    margin: 0 auto;
+  }
+}

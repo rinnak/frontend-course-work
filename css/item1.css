@@ -51,6 +51,7 @@ body {
   flex-wrap: wrap;
   row-gap: 25px;
   justify-content: center;
+  -moz-column-gap: 15px;
   column-gap: 15px;
 }
 .shop-buttons a {
@@ -109,6 +110,7 @@ body {
   flex-shrink: 0;
   width: 100%;
   height: 340px;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
@@ -121,6 +123,8 @@ body {
 .a-card {
   padding: 6px 14px;
   border-radius: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 10px 0 0 10px;
   background-color: var(--main-color);
@@ -158,6 +162,7 @@ body {
 .exclusive-bg .exclusive-image-bg {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   filter: blur(20px) brightness(0.7);
   transform: scale(1.1);
@@ -180,6 +185,7 @@ body {
   margin-top: 20px;
   width: 100%;
   height: 80%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 10px;
   aspect-ratio: 4/3;
@@ -198,6 +204,7 @@ body {
   background-color: var(--glass-background);
   border: var(--glass-border);
   cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   color: white;
@@ -212,11 +219,11 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
-
   text-align: center;
   transition: all 0.4s ease;
   opacity: 0;
   z-index: 4;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 .exclusive-item.show-details .exclusive-image {
