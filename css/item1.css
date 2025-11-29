@@ -95,6 +95,10 @@ body {
   visibility: hidden;
   position: absolute;
   pointer-events: none;
+  transition: all 0.3s ease;
+}
+.item1-grid-item:hover {
+  transform: translateY(-6px);
 }
 .item1-grid-item.active {
   opacity: 1;

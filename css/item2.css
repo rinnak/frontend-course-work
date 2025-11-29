@@ -25,6 +25,9 @@
   gap: 30px;
 }
 
+.container h1 {
+  font-size: 35px;
+}
 .carousel-title {
   text-align: center;
   margin-bottom: 20px;
