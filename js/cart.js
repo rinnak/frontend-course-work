@@ -12,23 +12,24 @@ function saveCart() {
 }
 
 function addToCart(id) {
-  const product = jewelryDataset.find((item) => item.id === id); //ищем в бд товар с таким айдишником
+  const product = jewelryDataset.find((item) => item.id === id); 
+  //ищем в jewelry-data.js товар с таким айдишником
   if (!product) return;
-
-  let existing = findCartItem(id); //проверяем есть ли этот товар в корзине
-
+  let existing = findCartItem(id); 
+  //проверяем есть ли этот товар в корзине
   if (existing) {
     existing.quantity++;
+    //если товар есть в корзине
+    //увеличиваем его количество
   } else {
     cart.push({
       ...product, //копируем все свойства товара
       quantity: 1,
     });
   }
-
-  saveCart();
-  renderCart();
-  updateCatalogButtons();
+  saveCart(); //сохраняем в память браузера
+  renderCart(); //рендерим корзину
+  updateCatalogButtons(); //обновляем кнопку каталога
 }
 
 function decreaseQuantity(id) {
